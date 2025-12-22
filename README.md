@@ -1,2 +1,2 @@
-# 2018-walter
-Complete rewrite of Walter's code. 
+# Walter
+Complete rewrite of Walter's code again. 

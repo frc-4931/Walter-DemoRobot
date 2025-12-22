@@ -1,7 +1,7 @@
-package frc.team4931.robot.commands;
+package frc.robot.commands;
 
-import edu.wpi.first.wpilibj.command.Command;
-import frc.team4931.robot.Robot;
+import edu.wpi.first.wpilibj2.command.Command;
+import frc.robot.Robot;
 
 public class ArmDown extends Command {
 
@@ -14,6 +14,6 @@ public class ArmDown extends Command {
   }
 
   protected void initialize() {
-    Robot.arm.down();
+    Robot.Arm.down();
   }
 }
