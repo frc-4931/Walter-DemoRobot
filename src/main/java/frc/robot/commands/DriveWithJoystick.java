@@ -9,19 +9,19 @@ public class DriveWithJoystick extends Command {
   private Drivetrain drivetrain;
 
   public DriveWithJoystick() {
-    requires(Robot.drivetrain);
-    joystick = Robot.operatorInput.getJoystick();
-    drivetrain = Robot.drivetrain;
+    // requires(Robot.drivetrain);
+    // joystick = Robot.operatorInput.getJoystick();
+    // drivetrain = Robot.drivetrain;
   }
 
   @Override
-  protected void execute() {
+  public void execute() {
     drivetrain.arcadeDrive(
         joystick.getY() * -1, joystick.getZ(), 1 - ((joystick.getThrottle() + 1) / 2));
   }
 
   @Override
-  protected boolean isFinished() {
+  public boolean isFinished() {
     // TODO Auto-generated method stub
     return false;
   }

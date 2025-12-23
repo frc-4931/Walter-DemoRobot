@@ -1,17 +1,26 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.Command;
-import frc.robot.Robot;
+import frc.robot.subsystems.Roller;
 
 public class RollerStop extends Command {
+  // The subsystem the command runs on
 
-  @Override
-  protected void initialize() {
-    Robot.roller.stop();
+  private final Roller m_Roller;
+
+  public RollerStop(Roller subsystem) {
+    m_Roller = subsystem;
+    addRequirements(m_Roller);
   }
 
   @Override
-  protected boolean isFinished() {
+  public void initialize() {
+    m_Roller.stop();
+  }
+
+
+  @Override
+  public boolean isFinished() {
     return true;
   }
 }

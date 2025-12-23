@@ -2,18 +2,23 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.Robot;
+import frc.robot.subsystems.Arm;
 
 public class ArmDown extends Command {
+  // The subsystem the command runs on
 
-  public ArmDown() {
-    setInterruptible(false);
+  private final Arm m_Arm;
+
+  public ArmDown(Arm subsystem) {
+    m_Arm = subsystem;
+    addRequirements(m_Arm);
   }
 
-  protected boolean isFinished() {
+  public boolean isFinished() {
     return true;
   }
 
-  protected void initialize() {
-    Robot.Arm.down();
+  public void initialize() {
+    m_Arm.down();
   }
 }

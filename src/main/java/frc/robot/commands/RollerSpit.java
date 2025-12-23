@@ -1,21 +1,25 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.Command;
-import frc.robot.Robot;
+import frc.robot.subsystems.Roller;
 
 public class RollerSpit extends Command {
+  // The subsystem the command runs on
 
-  public RollerSpit() {
-    setInterruptible(false);
+  private final Roller m_Roller;
+
+  public RollerSpit(Roller subsystem) {
+    m_Roller = subsystem;
+    addRequirements(m_Roller);
   }
 
   @Override
-  protected boolean isFinished() {
+  public boolean isFinished() {
     return true;
   }
 
   @Override
-  protected void initialize() {
-    Robot.roller.spit();
+  public void initialize() {
+    m_Roller.spit();
   }
 }
