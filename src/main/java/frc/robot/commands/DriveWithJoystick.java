@@ -1,7 +1,6 @@
 package frc.robot.commands;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj2.command.Command;
-import frc.robot.Robot;
 import frc.robot.subsystems.Drivetrain;
 
 public class DriveWithJoystick extends Command {
@@ -16,8 +15,7 @@ public class DriveWithJoystick extends Command {
 
   @Override
   public void execute() {
-    drivetrain.arcadeDrive(
-        joystick.getY() * -1, joystick.getZ(), 1 - ((joystick.getThrottle() + 1) / 2));
+    //drivetrain.arcadeDrive(joystick.getY() * -1, joystick.getZ(), 1 - ((joystick.getThrottle() + 1) / 2));
   }
 
   @Override
